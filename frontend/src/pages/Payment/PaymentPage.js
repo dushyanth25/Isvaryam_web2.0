@@ -120,6 +120,12 @@ export default function PaymentPage() {
                 <span className={classes.summary_value}>-<Price price={discount} /></span>
               </div>
             )}
+            {order.deliveryCharge > 0 && (
+              <div className={classes.summary_row}>
+                <span className={classes.summary_label}>Delivery Charge</span>
+                <span className={classes.summary_value}><Price price={order.deliveryCharge} /></span>
+              </div>
+            )}
             <div className={`${classes.summary_row} ${classes.final_total}`}>
               <span className={classes.summary_label}>Final Total</span>
               <span className={classes.summary_value}><Price price={order.totalPrice} /></span>
